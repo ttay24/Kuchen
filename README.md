@@ -61,9 +61,9 @@ public class KuchenCoroutineSample : MonoBehaviour
 {
     public IEnumerator Start()
     {
-        Debug.Log("SampleTopicが送信されるまで待つよ。");
+        Debug.Log("SampleTopic - wait to see it");
         yield return this.WaitForMessage("SampleTopic");
-        Debug.Log("SampleTopicが呼ばれたよ！");
+        Debug.Log("SampleTopic - it was called!");
     }
 }
 ```
@@ -104,7 +104,7 @@ public class Multiple : MonoBehaviour
 }
 ```
 
-### SubscribeOnce
+### Subscribe.Once()
 
 ```C#
 using UnityEngine;
@@ -117,7 +117,7 @@ public class SubscribeOnce : MonoBehaviour
         this.Subscribe("SampleTopic", () => { Debug.Log("!"); }).Once();
 
         this.Publish("SampleTopic");
-        this.Publish("SampleTopic"); // 2回目は呼び出されない
+        this.Publish("SampleTopic"); // Will not be called second time
     }
 }
 ```
@@ -160,10 +160,10 @@ public class SubscribeWithCoroutine : MonoBehaviour
         this.Publish("SampleTopic");
 
         this.Mute("SampleTopic");
-        this.Publish("SampleTopic"); // Muteしてる間は呼ばれない
+        this.Publish("SampleTopic"); // Mute; this will not be called
         this.Unmute("SampleTopic");
 
-        this.Publish("SampleTopic");
+        this.Publish("SampleTopic"); // No longer muted; should be called
     }
 }
 ```
