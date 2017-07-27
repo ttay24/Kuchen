@@ -2,9 +2,9 @@
 
 Pub/Sub Library for Unity
 
-## 使い方
+## How to Use
 
-### シンプルに
+### Simple
 
 ```C#
 using UnityEngine;
@@ -31,7 +31,7 @@ public class SimpleButton : MonoBehaviour
 }
 ```
 
-### 引数付き
+### With Arguments
 
 ```C#
 using UnityEngine;
@@ -50,7 +50,7 @@ public class WithArgs : MonoBehaviour
 }
 ```
 
-### コルーチンで
+### With Coroutines
 
 ```C#
 using System.Collections;
@@ -68,7 +68,7 @@ public class KuchenCoroutineSample : MonoBehaviour
 }
 ```
 
-### ワイルドカード
+### With Wildcard
 
 ```C#
 using UnityEngine;
@@ -86,7 +86,7 @@ public class Wildcard : MonoBehaviour
 }
 ```
 
-### 複数トピック
+### With Multiple Topics
 
 ```C#
 using UnityEngine;
@@ -168,7 +168,7 @@ public class SubscribeWithCoroutine : MonoBehaviour
 }
 ```
 
-### GameObject無し
+### Non-GameObject
 
 ```C#
 using Kuchen;
